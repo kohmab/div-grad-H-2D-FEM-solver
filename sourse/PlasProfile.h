@@ -132,10 +132,4 @@ struct MyPerturbation
 void GenAtomDistribution(cx_vec &Nat, cx_vec const &Z,
                          double Nat0, double AbsorberWidth, double SourceWidth);
 
-void GenTstConcentration(mat &Co, cx_colvec const &Z, cx_rowvec const &X);
-void GenTstConcentration2(mat &Co, cx_colvec const &Z, cx_rowvec const &X);
-void GenTstConcentrationSharp(mat &Co, cx_colvec const &Z, cx_rowvec const &X);
-void GenTstConcentrationHomX(mat &Co, cx_colvec const &Z, cx_rowvec const &X);
-void GenTstConcentrationHomXSharp(mat &Co, cx_colvec const &Z, cx_rowvec const &X);
-
 #endif
