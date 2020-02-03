@@ -14,24 +14,18 @@ OutTri=../numbers
 
 all:
 	$(CXX) -o $(Out) $(ALLFILES) $(PARAM) $(ARMAPARAMS) $(OPTFLAGS) $(CXXFLAGS)
-	../main
 
 mpi: 
 	$(MPICXX) -o $(Out) $(ALLFILES) $(PARAM) $(ARMAPARAMS) $(OPTFLAGS) $(CXXFLAGS)
-	../main
 	
 debug: 
 	$(MPICXX) -g -o $(Out) $(ALLFILES) $(PARAM) $(ARMAPARAMS) $(OPTFLAGS) $(CXXFLAGS)
-	../main	
 
 generate:
 	$(CXX) -o $(Out) $(ALLFILES) $(PARAM) $(ARMAPARAMS) $(OPTFLAGS) $(CXXFLAGS) -fprofile-generate
-	../main
 	
 use:
 	$(CXX) -o $(Out) $(ALLFILES) $(PARAM) $(ARMAPARAMS) $(OPTFLAGS) $(CXXFLAGS) -fprofile-use -fprofile-correction
-	../main
 
 numbers:
 	$(CXX) -o $(OutTri) $(NUMBERS) $(PARAM) $(ARMAPARAMS) $(OPTFLAGS) $(CXXFLAGS)
-	../numbers
