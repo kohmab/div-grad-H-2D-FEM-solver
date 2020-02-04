@@ -263,33 +263,20 @@ int main()
 
     // GenAtomDistribution(Nat, Z, Nat0, Absorber.Width, Source.ZWidth);
 
-    Mat<cx_double> H2D, Hy0, Hy1,
-        Ex0, Ex1, Ez0, Ez1,
-        Exa, Eza,
-        EpsX, EpsZ, Eps2D;
+    Mat<cx_double> H2D(Nz, Nx, fill::zeros),
+        Hy0(Nmax, 1, fill::zeros), Hy1(Nmax, 1, fill::zeros),
+        Ex0(Nmax + Nx, 1, fill::zeros), Ex1(Nmax + Nx, 1, fill::zeros),
+        Ez0(Nmax, 1, fill::zeros), Ez1(Nmax, 1, fill::zeros),
+        Exa(Nmax + Nx, 1, fill::zeros), Eza(Nmax, 1, fill::zeros),
+        EpsX(Nmax + Nx, 1, fill::zeros), EpsZ(Nmax + Nx, 1, fill::zeros), Eps2D;
 
-    Mat<double> AbsE2, N0, N05, N1, Nat, EpsM, Heat, CollFr;
-    H2D.zeros(Nz, Nx);
-    Hy0.zeros(Nmax, 1);
-    Hy1.zeros(Nmax, 1);
-    Ex0.zeros(Nmax + Nx, 1);
-    Ex1.zeros(Nmax + Nx, 1);
-    Ez0.zeros(Nmax, 1);
-    Ez1.zeros(Nmax, 1);
-    Exa.zeros(Nmax + Nx, 1);
-    Eza.zeros(Nmax, 1);
-    EpsX.zeros(Nmax + Nx, 1);
-    EpsZ.zeros(Nmax + Nx, 1);
-    AbsE2.zeros(Nmax + Nx, 1);
-    N0.zeros(Nmax + Nx, 1);
-    N05.zeros(Nmax + Nx, 1);
-    N1.zeros(Nmax + Nx, 1);
-    Nat.zeros(Nmax + Nx, 1);
-    EpsM.ones(Nmax + Nx, 1);
-    Heat.zeros(Nmax + Nx, 1);
-    CollFr.zeros(Nmax + Nx, 1);
+    Mat<double> AbsE2(Nmax + Nx, 1, fill::zeros),
+        N0(Nmax + Nx, 1, fill::zeros), N05(Nmax + Nx, 1, fill::zeros), N1(Nmax + Nx, 1, fill::zeros),
+        Nat(Nmax + Nx, 1, fill::zeros), EpsM(Nmax + Nx, 1, fill::zeros),
+        Heat(Nmax + Nx, 1, fill::zeros), CollFr(Nmax + Nx, 1, fill::zeros);
 
-    int plt = 0, sav = 0;
+    int plt = 0,
+        sav = 0;
     double ExecTime = omp_get_wtime();
     cout << "dX = " << dX << ", dZ = " << dZ << endl;
 
