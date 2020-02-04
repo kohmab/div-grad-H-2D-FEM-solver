@@ -54,7 +54,7 @@ int main()
     getline(ConfigFile, ConfigString);
     GetParam(ConfigString, Nx);
     int Nmax = Nx * Nz;
-    SaveFileName += "Nx" + to_string(Nx) + "_Nz" + to_string(Nz);
+    SaveFileName += "NH" + to_string(Nx) + "_NW" + to_string(Nz);
     OptionsMat(0) = double(Nx);
     OptionsMat(1) = double(Nz);
 
