@@ -85,11 +85,12 @@ struct MyPerturbation
             {
                 vec phase(Nw, fill::randu), angle(Nw, fill::randu);
                 phase *= 2.0 * M_PI;
-                angle *= M_PI;
+                angle = angle * 2.0 - 1.0;
+
                 double k = 2 * M_PI / real(Lx) * (double)h;
                 for (int w = 0; w < Nw; w++)
                 {
-                    Shape += cos(k * (X2D * cos(angle(w)) + Z2D * sin(angle(w))) + phase(w));
+                    Shape += cos(k * (X2D + angle(w) * Z2D) + phase(w));
                 }
             }
         }
