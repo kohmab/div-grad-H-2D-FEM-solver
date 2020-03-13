@@ -99,7 +99,7 @@ struct MyPerturbation
             Shape = Shape / Shape.max() * Amplitude;
         for (int i = 0; i < Nx; i++)
             Shape.col(i) = Shape.col(i) % ZShape;
-    }
+    } 
 };
 
 void GenAtomDistribution(cx_vec &Nat, cx_vec const &Z,

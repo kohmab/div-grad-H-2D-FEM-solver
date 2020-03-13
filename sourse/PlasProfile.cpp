@@ -21,5 +21,5 @@ void GenAtomDistribution(vec & Nat, cx_vec const & Z,
             if (real( Z(maxind) - Z(i) ) < M_PI) 
                 Nat(i) = real(  1.0 - cos( Z(maxind) - Z(i) )  ) * Nat0 / 2.0;
         }
-
+ 
     };
